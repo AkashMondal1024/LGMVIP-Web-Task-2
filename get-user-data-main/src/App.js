@@ -8,7 +8,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
 
-  const getUsers = async () => {
+  const getUsers = async (e) => {
+    e.preventDefault();
     setLoading(true);
     try {
       const response = await axios.get('https://reqres.in/api/users?page=1');
